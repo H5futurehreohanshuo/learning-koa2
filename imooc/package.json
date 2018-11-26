@@ -4,13 +4,25 @@
   "description": "",
   "main": "cb-promise.js",
   "scripts": {
+    "dev": "nodemon -w src --exec \"babel-node src --preset env\"",
+    "production": "node dist",
+    "build": "rimraf dist && babel src -D -d dist --preset env",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "co": "^4.6.0",
-    "node-fetch": "^2.3.0"
+    "node-fetch": "^2.3.0",
+    "nodemon": "^1.18.6",
+    "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-runtime": "^6.26.0",
+    "koa": "^2.6.2"
   }
 }
